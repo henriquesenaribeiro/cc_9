@@ -82,7 +82,7 @@ company.addEmployee(mgr1);
 company.listEmployees(); // List all employees
 console.log("Task 3 Completed\n");
 
-// Task 4 - Payroll System
+// Task 4 - Implemented Payroll System
 // Method to calculate the total payroll of all employees (including managers)
 Company.prototype.calculateTotalPayroll = function () {
     const totalPayroll = this.employees.reduce((total, emp) => total + emp.calculateAnnualSalary(), 0);
