@@ -52,3 +52,32 @@ const mgr1 = new Manager("John Smith", 201, "IT", 8000, 5);
 console.log(mgr1.getDetails()); // Manager details
 console.log(`Bonus: $${mgr1.calculateBonus()}`); // Bonus calculation
 console.log("Task 2 Completed\n");
+
+// Task 3 - Created Company Class
+// Define a Company class to store and manage employees.
+// Includes methods to add employees and list all employees.
+class Company {
+    constructor(name) {
+        this.name = name;
+        this.employees = [];
+    }
+
+    // Method to add an employee to the company
+    addEmployee(employee) {
+        this.employees.push(employee);
+        console.log(`Added employee: ${employee.getDetails()}`);
+    }
+
+    // Method to list all employees in the company
+    listEmployees() {
+        console.log("Listing all employees:");
+        this.employees.forEach(emp => console.log(emp.getDetails()));
+    }
+}
+
+// Test Task 3
+const company = new Company("TechCorp");
+company.addEmployee(emp1);
+company.addEmployee(mgr1);
+company.listEmployees(); // List all employees
+console.log("Task 3 Completed\n");
