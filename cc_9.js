@@ -93,3 +93,16 @@ Company.prototype.calculateTotalPayroll = function () {
 // Test Task 4
 company.calculateTotalPayroll();
 console.log("Task 4 Completed\n");
+
+// Task 5 - Implemented Promotion System
+// Method to promote an employee to a manager position while retaining their details
+Company.prototype.promoteToManager = function (employee, teamSize) {
+    const manager = new Manager(employee.name, employee.id, employee.department, employee.salary, teamSize);
+    this.employees = this.employees.map(emp => emp.id === employee.id ? manager : emp);
+    console.log(`Promoted employee to Manager: ${manager.getDetails()}`);
+};
+
+// Test Task 5
+company.promoteToManager(emp1, 3);
+company.listEmployees(); // Verify that emp1 is now a manager
+console.log("Task 5 Completed\n");
